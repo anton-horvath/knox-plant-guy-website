@@ -4,6 +4,7 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { WatercolorDefs } from "@/components/PlantArt";
 
 // Display serif — soft, high-contrast, characterful headings.
 const display = Fraunces({
@@ -47,6 +48,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="grain flex min-h-full flex-col">
+        <WatercolorDefs />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

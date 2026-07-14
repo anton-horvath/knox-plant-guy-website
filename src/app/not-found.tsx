@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Container from "@/components/Container";
-import { PlantOutline } from "@/components/outlines";
+import { PlantArt } from "@/components/PlantArt";
 
 export default function NotFound() {
   return (
     <Container className="flex flex-col items-center py-28 text-center">
-      <PlantOutline slug="wood-poppy" className="h-40 w-auto text-ink/70" />
+      <PlantArt slug="wood-poppy" className="h-40 w-auto" />
       <p className="eyebrow mt-8">Nothing growing here</p>
       <h1 className="mt-4 font-display text-4xl font-light text-ink sm:text-5xl">
         Page not found.

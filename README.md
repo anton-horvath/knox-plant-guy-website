@@ -47,6 +47,7 @@ e.g. `wild-columbine` → `/plants/wild-columbine`).
   common: "Trout Lily",
   group: "shade",            // "shade" | "wet" | "specialty"
   lifecycle: "perennial",    // "perennial" | "biennial"
+  palette: { bloom: ["#cca049"], foliage: ["#7c8a66", "#5f6d4c"] }, // watercolor colors
   tagline: "Mottled leaves and nodding yellow bells.",
   description: "A longer sentence or two for the plant page…",
   light: "Part to full shade",
@@ -82,19 +83,39 @@ and navigation all read from this one list automatically.
 2. Drop in photos named `1.jpg`, `2.jpg`, `3.jpg`, …
 3. Set that plant's `photoCount` in `src/data/plants.ts` to how many you added.
 
-The plant page then shows a photo gallery (with the line drawing as the first
-thumbnail). Until you add photos, it shows the drawing with a "Photographs
-coming soon" note. See [`public/plants/README.md`](public/plants/README.md).
+The plant page then shows a photo gallery (with the watercolor illustration as
+the first thumbnail). Until you add photos, it shows the illustration with a
+"Photographs coming soon" note. See [`public/plants/README.md`](public/plants/README.md).
 
 ---
 
-## 🖊️ The black-outline illustrations
+## 🎨 The watercolor illustrations
 
-Each plant has a hand-drawn SVG line illustration in
-[`src/components/outlines.tsx`](src/components/outlines.tsx), keyed by `slug`.
-When you add a new plant, it automatically falls back to a generic sprig until
-you draw one. To add a custom drawing, copy one of the existing components,
-tweak the paths, and register it in the `registry` map at the bottom of the file.
+Every plant has a soft, hand-built **watercolor** illustration — color washes
+under a fine ink line drawing — so shoppers can read each plant's colors and
+flower/leaf shape before clicking in. It's all SVG (no image files), so it stays
+crisp at any size and loads instantly.
+
+There are two pieces:
+
+1. **Colors** live with the plant data in
+   [`src/data/plants.ts`](src/data/plants.ts), in each plant's `palette`:
+   ```ts
+   palette: { bloom: ["#b3543f", "#c99f52"], foliage: ["#7c8a66", "#59684a"] },
+   ```
+   `bloom` = the flower color(s); `foliage` = the leaf/stem greens. Keep them
+   soft and earthy so they sit in the calm palette. **This is the easy knob** —
+   change a hex value to recolor a plant's painting.
+
+2. **Shape** — the line drawing and where the paint sits — lives in
+   [`src/components/outlines.tsx`](src/components/outlines.tsx) (the line geometry,
+   keyed by `slug`) and [`src/components/PlantArt.tsx`](src/components/PlantArt.tsx)
+   (the `washMap`, which places the color blobs over the flowers/leaves).
+
+When you add a new plant, give it a `palette` and it will paint using a generic
+sprig shape automatically. For a custom drawing, copy one of the shapes in
+`outlines.tsx` (register it in the `registry` map) and add a matching `washMap`
+entry in `PlantArt.tsx`.
 
 ---
 

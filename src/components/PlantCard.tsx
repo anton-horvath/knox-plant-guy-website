@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Plant } from "@/data/plants";
 import { groupMeta } from "@/data/plants";
-import { PlantOutline } from "./outlines";
+import { PlantArt } from "./PlantArt";
 
 export default function PlantCard({ plant }: { plant: Plant }) {
   return (
@@ -14,9 +14,9 @@ export default function PlantCard({ plant }: { plant: Plant }) {
         <span className="eyebrow absolute left-4 top-4 text-[0.6rem]">
           {groupMeta[plant.group].short}
         </span>
-        <PlantOutline
+        <PlantArt
           slug={plant.slug}
-          className="h-full w-auto text-ink/90 transition-transform duration-500 group-hover:scale-[1.04]"
+          className="h-full w-auto transition-transform duration-500 group-hover:scale-[1.04]"
         />
       </div>
 

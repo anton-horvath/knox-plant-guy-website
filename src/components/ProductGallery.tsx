@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { PlantOutline } from "./outlines";
+import { PlantArt } from "./PlantArt";
 
-// Shows the plant's photos with the signature line-art as the first view.
+// Shows the plant's photos with the signature watercolor art as the first view.
 // Photos live at /public/plants/<slug>/1.jpg, 2.jpg, ... — set the plant's
 // `photoCount` in src/data/plants.ts to how many you've added.
 export default function ProductGallery({
@@ -30,7 +30,7 @@ export default function ProductGallery({
       <div className="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-sm border border-mist bg-linen/40">
         {showingOutline ? (
           <>
-            <PlantOutline slug={slug} className="h-4/5 w-auto text-ink/90" />
+            <PlantArt slug={slug} className="h-4/5 w-auto" />
             {photoCount === 0 && (
               <span className="absolute bottom-4 left-0 right-0 text-center font-serif text-xs uppercase tracking-widest text-clay">
                 Photographs coming soon
@@ -56,7 +56,7 @@ export default function ProductGallery({
             onClick={() => setActive(0)}
             label="Illustration"
           >
-            <PlantOutline slug={slug} className="h-10 w-auto text-ink/80" />
+            <PlantArt slug={slug} className="h-12 w-auto" />
           </Thumb>
           {photos.map((src, i) => (
             <Thumb
