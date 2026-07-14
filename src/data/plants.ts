@@ -17,6 +17,14 @@ export type PlantGroup = "shade" | "wet" | "specialty";
 // grows leaves year one, blooms & sets seed year two, then is done.
 export type Lifecycle = "perennial" | "biennial";
 
+// Muted, earthy hues used to paint the watercolor illustration.
+// `bloom` = the flower color(s); `foliage` = the leaf/stem greens.
+// Keep these soft and desaturated so they sit in the japandi palette.
+export interface PlantPalette {
+  bloom: string[]; // 1–2 hex colors for the flowers
+  foliage: string[]; // 1–2 hex greens for leaves/stems
+}
+
 export interface Plant {
   slug: string;
   botanical: string;
@@ -29,6 +37,8 @@ export interface Plant {
 
   // Growing conditions
   lifecycle: Lifecycle; // "perennial" | "biennial"
+  /** Colors for the watercolor illustration (see PlantPalette). */
+  palette: PlantPalette;
   light: string;
   moisture: string;
   bloomSeason: string;
@@ -79,6 +89,7 @@ export const plants: Plant[] = [
     common: "Wild Columbine",
     group: "shade",
     lifecycle: "perennial",
+    palette: { bloom: ["#b0674c", "#c99f52"], foliage: ["#7f8c66", "#5f6d4c"] },
     tagline: "Nodding red-and-gold lanterns for the shade edge.",
     description:
       "Delicate, spurred flowers dangle like little lanterns above lacy blue-green foliage. One of the easiest and most rewarding natives — quick from seed, long-lived, and a magnet for early hummingbirds and native bees. Happy in dry to medium woodland soil and gently self-sows into pleasing drifts.",
@@ -100,6 +111,7 @@ export const plants: Plant[] = [
     common: "Golden Ragwort",
     group: "shade",
     lifecycle: "perennial",
+    palette: { bloom: ["#c9a24c"], foliage: ["#8a9568", "#63704b"] },
     tagline: "A living carpet lit with gold each spring.",
     description:
       "Evergreen rosettes of rounded, purple-backed leaves spread into a weed-smothering groundcover, then throw up airy stems of bright golden daisies in spring. Vigorous and forgiving in moist shade — one of the best native alternatives to turf or ivy in a damp, shady spot.",
@@ -120,6 +132,7 @@ export const plants: Plant[] = [
     common: "Woodland Phlox",
     group: "shade",
     lifecycle: "perennial",
+    palette: { bloom: ["#9a97ba", "#b8a9c6"], foliage: ["#7f8c66", "#5f6d4c"] },
     tagline: "Fragrant clouds of lavender-blue.",
     description:
       "Loose clusters of five-petaled, sweetly fragrant flowers float in a haze of lavender-blue over low, spreading foliage. Slow and precious from seed, it settles in to form soft drifts along a shady path. A classic companion to columbine and phlox-loving swallowtails.",
@@ -141,6 +154,7 @@ export const plants: Plant[] = [
     common: "American Bellflower",
     group: "shade",
     lifecycle: "biennial",
+    palette: { bloom: ["#8aa2b8"], foliage: ["#828e63", "#5e6b47"] },
     tagline: "Tall summer spires of five-pointed blue stars.",
     description:
       "A graceful woodland-edge biennial: leafy rosettes the first year, then towering stems ringed with flat, star-shaped blue flowers the next summer. Wonderful for a naturalistic planting where it can reseed and drift. Honestly labeled — this one is a patient gardener's plant, blooming in its second year.",
@@ -160,6 +174,7 @@ export const plants: Plant[] = [
     common: "Indian Pink",
     group: "shade",
     lifecycle: "perennial",
+    palette: { bloom: ["#b3543f", "#c99f52"], foliage: ["#7c8a66", "#59684a"] },
     tagline: "Scarlet trumpets tipped with a yellow star.",
     description:
       "The showstopper of the shade garden — upright clusters of crimson tubes flare open into brilliant yellow stars, irresistible to hummingbirds. Slow to size up, so every plant is grown with patience; the reward is a tidy, clump-forming perennial that gets better every year. Our flagship plant.",
@@ -181,6 +196,7 @@ export const plants: Plant[] = [
     common: "Poke Milkweed",
     group: "shade",
     lifecycle: "perennial",
+    palette: { bloom: ["#d7cbb5", "#c6b0a6"], foliage: ["#7f8b64", "#5c6a49"] },
     tagline: "The rare milkweed that thrives in shade.",
     description:
       "An uncommon woodland milkweed with drooping umbels of pale green-and-white flowers on tall, poke-like stems. A genuine monarch host plant for shadier gardens where common milkweeds sulk — scarce in the trade and quietly beautiful.",
@@ -202,6 +218,7 @@ export const plants: Plant[] = [
     common: "Cardinal Flower",
     group: "wet",
     lifecycle: "perennial",
+    palette: { bloom: ["#b0463a"], foliage: ["#77855f", "#566448"] },
     tagline: "The most vivid red in the native garden.",
     description:
       "Nothing else glows quite like it — tall spikes packed with velvety, true-scarlet flowers that hummingbirds cannot resist. Loves consistently moist to wet soil at a pond edge or in a rain garden, blooming right through the late-summer sale season.",
@@ -222,6 +239,7 @@ export const plants: Plant[] = [
     common: "Great Blue Lobelia",
     group: "wet",
     lifecycle: "perennial",
+    palette: { bloom: ["#6f86a6"], foliage: ["#79865f", "#586646"] },
     tagline: "Cardinal flower's cool blue counterpart.",
     description:
       "Spikes of rich blue, two-lipped flowers carry the wet garden into fall, when little else is blooming. Reliable and long-lived in moist soil, a favorite of bumblebees, and a beautiful partner planted alongside its scarlet cousin.",
@@ -241,6 +259,7 @@ export const plants: Plant[] = [
     common: "Swamp Milkweed",
     group: "wet",
     lifecycle: "perennial",
+    palette: { bloom: ["#bf8b96", "#d0a7ac"], foliage: ["#7e8b63", "#5b6a48"] },
     tagline: "Fragrant pink for monarchs and moist soil.",
     description:
       "Softly vanilla-scented, dusky-pink flower clusters sit atop upright stems all summer — a premier monarch host and nectar plant that, despite the name, is easygoing in any reliably moist garden soil. Butterflies, bees, and the occasional monarch caterpillar included.",
@@ -260,6 +279,7 @@ export const plants: Plant[] = [
     common: "Sweet Joe Pye Weed",
     group: "wet",
     lifecycle: "perennial",
+    palette: { bloom: ["#ab8c9c", "#c0a6b0"], foliage: ["#7b8860", "#586646"] },
     tagline: "Architectural stems crowned in mauve haze.",
     description:
       "A stately back-of-border native — whorled leaves climb tall, vanilla-scented stems topped with big, domed clouds of dusty-mauve flowers that hum with butterflies and bees in late summer. Commanding structure for a rain garden or moist meadow edge.",
@@ -279,6 +299,7 @@ export const plants: Plant[] = [
     common: "Cutleaf Coneflower",
     group: "wet",
     lifecycle: "perennial",
+    palette: { bloom: ["#c9a24c"], foliage: ["#849066", "#5f6d4a"] },
     tagline: "Sunny recurved petals on towering stems.",
     description:
       "Bright yellow daisies with gracefully drooping rays and a green central knob wave atop tall, branching stems — cheerful, tough, and fast-growing in moist ground. Feeds late-summer pollinators and sets seed that goldfinches love.",
@@ -300,6 +321,7 @@ export const plants: Plant[] = [
     common: "Bloodroot",
     group: "specialty",
     lifecycle: "perennial",
+    palette: { bloom: ["#e7ded0", "#cfa24f"], foliage: ["#7d8a64", "#5a6948"] },
     tagline: "A fleeting, pure-white spring ephemeral.",
     description:
       "Among the first to greet spring — a single, snow-white flower with a golden center unfurls from a scroll of sculptural, scalloped leaf. Short-lived in bloom but unforgettable, with handsome foliage that carries on afterward. Grown patiently from division; a true collector's woodland treasure.",
@@ -321,6 +343,7 @@ export const plants: Plant[] = [
     common: "Celandine / Wood Poppy",
     group: "specialty",
     lifecycle: "perennial",
+    palette: { bloom: ["#cca049"], foliage: ["#8a9568", "#63704b"] },
     tagline: "Buttery poppies over deeply cut leaves.",
     description:
       "Four-petaled, satiny yellow poppies bloom for weeks above lobed, blue-green foliage, then nod into fuzzy seed pods. A cheerful, long-blooming brightener for the shade garden that gently self-sows once it feels at home.",

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
-import { PlantOutline } from "@/components/outlines";
+import { PlantArt } from "@/components/PlantArt";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ const values = [
     body: "These are the plants that belong in East Tennessee: hosts for monarchs, nectar for native bees, and food for the birds that overwinter here.",
   },
   {
-    slug: "dwarf-crested-iris",
+    slug: "wood-poppy",
     title: "Small batch, honest labels",
     body: "Biennials are sold as biennials; slow growers are grown slowly. You get a healthy, honestly-described plant — not a forced one-season showpiece.",
   },
@@ -51,10 +51,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="flex justify-center">
-            <PlantOutline
-              slug="indian-pink"
-              className="h-72 w-auto text-ink/80 sm:h-96"
-            />
+            <PlantArt slug="indian-pink" className="h-72 w-auto sm:h-96" />
           </div>
         </Container>
       </section>
@@ -66,7 +63,7 @@ export default function AboutPage() {
             {values.map((v) => (
               <div key={v.title}>
                 <div className="flex h-24 items-center justify-start">
-                  <PlantOutline slug={v.slug} className="h-full w-auto text-ink/75" />
+                  <PlantArt slug={v.slug} className="h-full w-auto" />
                 </div>
                 <h2 className="mt-5 font-display text-2xl text-ink">{v.title}</h2>
                 <p className="mt-3 font-serif text-base leading-relaxed text-stone">

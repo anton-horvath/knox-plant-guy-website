@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import PlantCard from "@/components/PlantCard";
-import { PlantOutline } from "@/components/outlines";
+import { PlantArt } from "@/components/PlantArt";
 import { site } from "@/lib/site";
 import {
   getFeaturedPlants,
@@ -46,18 +46,9 @@ export default function HomePage() {
 
           {/* Hero outline arrangement */}
           <div className="relative mx-auto flex h-72 w-full max-w-sm items-end justify-center gap-2 sm:h-96">
-            <PlantOutline
-              slug="cardinal-flower"
-              className="h-[85%] w-auto text-ink/85"
-            />
-            <PlantOutline
-              slug="wild-columbine"
-              className="h-[70%] w-auto text-ink/70"
-            />
-            <PlantOutline
-              slug="dwarf-crested-iris"
-              className="h-[55%] w-auto text-ink/60"
-            />
+            <PlantArt slug="cardinal-flower" className="h-[85%] w-auto" />
+            <PlantArt slug="wild-columbine" className="h-[70%] w-auto" />
+            <PlantArt slug="bloodroot" className="h-[55%] w-auto" />
           </div>
         </Container>
         <div className="mx-auto h-px w-full max-w-6xl bg-mist/70" />
@@ -85,9 +76,9 @@ export default function HomePage() {
                 >
                   <div className="flex h-28 items-center justify-center">
                     {sample && (
-                      <PlantOutline
+                      <PlantArt
                         slug={sample.slug}
-                        className="h-full w-auto text-ink/80 transition-transform duration-500 group-hover:scale-105"
+                        className="h-full w-auto transition-transform duration-500 group-hover:scale-105"
                       />
                     )}
                   </div>
@@ -156,9 +147,9 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex justify-center">
-            <PlantOutline
+            <PlantArt
               slug="sweet-joe-pye-weed"
-              className="h-64 w-auto text-ink/75 sm:h-80"
+              className="h-64 w-auto sm:h-80"
             />
           </div>
         </Container>
