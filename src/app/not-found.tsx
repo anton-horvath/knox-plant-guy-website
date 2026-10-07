@@ -5,7 +5,7 @@ import { PlantArt } from "@/components/PlantArt";
 export default function NotFound() {
   return (
     <Container className="flex flex-col items-center py-28 text-center">
-      <PlantArt slug="wood-poppy" className="h-40 w-auto" />
+      <PlantArt slug="eastern-bluestar" className="h-40 w-auto" />
       <p className="eyebrow mt-8">Nothing growing here</p>
       <h1 className="mt-4 font-display text-4xl font-light text-ink sm:text-5xl">
         Page not found.

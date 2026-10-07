@@ -40,16 +40,7 @@ const genericWash: Wash[] = [
 
 // Blob positions mirror the geometry in outlines.tsx (viewBox 200×240).
 const washMap: Record<string, Wash[]> = {
-  "wild-columbine": [
-    { x: 78, y: 112, rx: 15, ry: 13, c: "b" },
-    { x: 124, y: 108, rx: 15, ry: 13, c: "b" },
-    { x: 100, y: 93, rx: 13, ry: 12, c: "b" },
-    { x: 78, y: 114, rx: 7, ry: 6, c: "b2" },
-    { x: 124, y: 110, rx: 7, ry: 6, c: "b2" },
-    { x: 100, y: 95, rx: 6, ry: 5, c: "b2" },
-    { x: 100, y: 214, rx: 30, ry: 15, c: "l" },
-    { x: 100, y: 220, rx: 18, ry: 9, c: "l2" },
-  ],
+  // -------- Shade --------
   "golden-ragwort": [
     { x: 70, y: 66, rx: 13, ry: 12, c: "b" },
     { x: 130, y: 70, rx: 13, ry: 12, c: "b" },
@@ -60,24 +51,12 @@ const washMap: Record<string, Wash[]> = {
     { x: 118, y: 210, rx: 24, ry: 14, c: "l" },
     { x: 100, y: 196, rx: 18, ry: 11, c: "l2" },
   ],
-  "woodland-phlox": [
-    { x: 84, y: 96, rx: 14, ry: 13, c: "b" },
-    { x: 120, y: 104, rx: 13, ry: 12, c: "b" },
-    { x: 102, y: 74, rx: 14, ry: 13, c: "b" },
-    { x: 76, y: 122, rx: 11, ry: 10, c: "b2" },
-    { x: 126, y: 78, rx: 10, ry: 9, c: "b2" },
-    { x: 96, y: 175, rx: 16, ry: 11, c: "l" },
-    { x: 100, y: 200, rx: 16, ry: 11, c: "l" },
-    { x: 96, y: 150, rx: 11, ry: 8, c: "l2" },
-  ],
-  "american-bellflower": [
-    { x: 84, y: 88, rx: 12, ry: 11, c: "b" },
-    { x: 118, y: 104, rx: 12, ry: 11, c: "b" },
-    { x: 90, y: 124, rx: 11, ry: 10, c: "b" },
-    { x: 112, y: 66, rx: 11, ry: 10, c: "b" },
-    { x: 100, y: 148, rx: 10, ry: 9, c: "b" },
-    { x: 100, y: 185, rx: 20, ry: 13, c: "l" },
-    { x: 100, y: 210, rx: 18, ry: 11, c: "l2" },
+  "golden-alexanders": [
+    { x: 100, y: 84, rx: 18, ry: 11, c: "b" },
+    { x: 80, y: 104, rx: 13, ry: 9, c: "b" },
+    { x: 122, y: 98, rx: 13, ry: 9, c: "b" },
+    { x: 100, y: 178, rx: 22, ry: 13, c: "l" },
+    { x: 100, y: 205, rx: 20, ry: 12, c: "l2" },
   ],
   "indian-pink": [
     { x: 98, y: 110, rx: 15, ry: 14, c: "b" },
@@ -88,15 +67,22 @@ const washMap: Record<string, Wash[]> = {
     { x: 100, y: 176, rx: 24, ry: 14, c: "l" },
     { x: 100, y: 202, rx: 22, ry: 13, c: "l2" },
   ],
-  "poke-milkweed": [
-    { x: 64, y: 130, rx: 13, ry: 12, c: "b" },
-    { x: 140, y: 128, rx: 13, ry: 12, c: "b" },
-    { x: 101, y: 118, rx: 11, ry: 10, c: "b" },
-    { x: 64, y: 130, rx: 6, ry: 6, c: "b2" },
-    { x: 140, y: 128, rx: 6, ry: 6, c: "b2" },
-    { x: 100, y: 178, rx: 34, ry: 20, c: "l" },
-    { x: 100, y: 206, rx: 30, ry: 18, c: "l2" },
+  "eastern-bluestar": [
+    { x: 100, y: 90, rx: 17, ry: 14, c: "b" },
+    { x: 100, y: 84, rx: 10, ry: 9, c: "b2" },
+    { x: 84, y: 100, rx: 8, ry: 7, c: "b" },
+    { x: 116, y: 100, rx: 8, ry: 7, c: "b" },
+    { x: 100, y: 175, rx: 15, ry: 32, c: "l" },
+    { x: 100, y: 208, rx: 13, ry: 13, c: "l2" },
   ],
+  "mountain-mint": [
+    { x: 100, y: 94, rx: 15, ry: 9, c: "b" },
+    { x: 79, y: 105, rx: 12, ry: 8, c: "b" },
+    { x: 123, y: 102, rx: 12, ry: 8, c: "b" },
+    { x: 100, y: 182, rx: 20, ry: 13, c: "l" },
+    { x: 100, y: 208, rx: 18, ry: 12, c: "l2" },
+  ],
+  // -------- Rain garden --------
   "cardinal-flower": [
     { x: 100, y: 80, rx: 13, ry: 22, c: "b" },
     { x: 100, y: 120, rx: 14, ry: 24, c: "b" },
@@ -104,13 +90,6 @@ const washMap: Record<string, Wash[]> = {
     { x: 88, y: 100, rx: 6, ry: 6, c: "b" },
     { x: 112, y: 130, rx: 6, ry: 6, c: "b" },
     { x: 100, y: 212, rx: 20, ry: 12, c: "l" },
-  ],
-  "great-blue-lobelia": [
-    { x: 100, y: 92, rx: 13, ry: 22, c: "b" },
-    { x: 100, y: 132, rx: 14, ry: 24, c: "b" },
-    { x: 100, y: 160, rx: 11, ry: 14, c: "b" },
-    { x: 100, y: 165, rx: 20, ry: 12, c: "l" },
-    { x: 100, y: 205, rx: 20, ry: 12, c: "l2" },
   ],
   "swamp-milkweed": [
     { x: 76, y: 92, rx: 13, ry: 10, c: "b" },
@@ -128,41 +107,13 @@ const washMap: Record<string, Wash[]> = {
     { x: 128, y: 152, rx: 20, ry: 10, c: "l" },
     { x: 100, y: 190, rx: 22, ry: 12, c: "l2" },
   ],
-  "cutleaf-coneflower": [
-    { x: 92, y: 92, rx: 18, ry: 17, c: "b" },
-    { x: 124, y: 122, rx: 15, ry: 14, c: "b" },
-    { x: 92, y: 92, rx: 6, ry: 6, c: "l2" },
-    { x: 124, y: 122, rx: 5, ry: 5, c: "l2" },
-    { x: 84, y: 190, rx: 18, ry: 11, c: "l" },
-    { x: 112, y: 206, rx: 18, ry: 11, c: "l" },
-  ],
-  "fire-pink": [
-    { x: 92, y: 104, rx: 15, ry: 14, c: "b" },
-    { x: 126, y: 120, rx: 12, ry: 11, c: "b" },
-    { x: 108, y: 78, rx: 11, ry: 10, c: "b" },
-    { x: 100, y: 180, rx: 16, ry: 10, c: "l" },
-    { x: 100, y: 206, rx: 16, ry: 10, c: "l2" },
-  ],
-  "dwarf-crested-iris": [
-    { x: 100, y: 112, rx: 20, ry: 15, c: "b" },
-    { x: 100, y: 100, rx: 11, ry: 11, c: "b2" },
-    { x: 74, y: 124, rx: 9, ry: 7, c: "b" },
-    { x: 126, y: 124, rx: 9, ry: 7, c: "b" },
-    { x: 88, y: 172, rx: 9, ry: 36, rot: -14, c: "l" },
-    { x: 112, y: 172, rx: 9, ry: 36, rot: 14, c: "l2" },
-  ],
-  bloodroot: [
-    { x: 86, y: 96, rx: 16, ry: 15, c: "b" },
-    { x: 86, y: 96, rx: 5, ry: 5, c: "b2" },
-    { x: 138, y: 178, rx: 26, ry: 30, rot: 8, c: "l" },
-    { x: 140, y: 190, rx: 18, ry: 20, c: "l2" },
-  ],
-  "wood-poppy": [
-    { x: 88, y: 104, rx: 19, ry: 18, c: "b" },
-    { x: 118, y: 130, rx: 14, ry: 13, c: "b" },
-    { x: 74, y: 205, rx: 20, ry: 12, c: "l" },
-    { x: 126, y: 208, rx: 20, ry: 12, c: "l" },
-    { x: 100, y: 220, rx: 18, ry: 11, c: "l2" },
+  "pink-turtlehead": [
+    { x: 100, y: 90, rx: 14, ry: 16, c: "b" },
+    { x: 100, y: 80, rx: 9, ry: 10, c: "b2" },
+    { x: 90, y: 100, rx: 9, ry: 10, c: "b" },
+    { x: 110, y: 100, rx: 9, ry: 10, c: "b" },
+    { x: 100, y: 178, rx: 18, ry: 13, c: "l" },
+    { x: 100, y: 208, rx: 16, ry: 12, c: "l2" },
   ],
 };
 

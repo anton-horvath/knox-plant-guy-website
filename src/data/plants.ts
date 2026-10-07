@@ -4,14 +4,15 @@
 //  This is the single source of truth for every plant on the site.
 //  To ADD a plant:   copy a block below, change the fields, and give it
 //                    a unique `slug`. Add a matching outline in
-//                    src/components/outlines.tsx (optional but nice).
+//                    src/components/outlines.tsx + a washMap entry in
+//                    src/components/PlantArt.tsx (optional but nice).
 //  To REMOVE a plant: delete its block.
 //  To HIDE a plant:   set `available: false` (kept in code, off the site).
 //  Photos live in:    public/plants/<slug>/1.jpg, 2.jpg, ...
 //                     set `photoCount` to how many you've added.
 // =====================================================================
 
-export type PlantGroup = "shade" | "wet" | "specialty";
+export type PlantGroup = "shade" | "wet";
 
 // How the plant lives: a perennial returns for many years; a biennial
 // grows leaves year one, blooms & sets seed year two, then is done.
@@ -73,38 +74,10 @@ export const groupMeta: Record<
     blurb:
       "Moisture-lovers for low spots, rain gardens, and pond edges — lush foliage and pollinator-heavy blooms.",
   },
-  specialty: {
-    label: "Specialty & Collector",
-    short: "Specialty",
-    blurb:
-      "Slower, rarer, and worth the wait — spring-blooming treasures grown in small numbers.",
-  },
 };
 
 export const plants: Plant[] = [
   // ---------------------------- SHADE ----------------------------
-  {
-    slug: "wild-columbine",
-    botanical: "Aquilegia canadensis",
-    common: "Wild Columbine",
-    group: "shade",
-    lifecycle: "perennial",
-    palette: { bloom: ["#b0674c", "#c99f52"], foliage: ["#7f8c66", "#5f6d4c"] },
-    tagline: "Nodding red-and-gold lanterns for the shade edge.",
-    description:
-      "Delicate, spurred flowers dangle like little lanterns above lacy blue-green foliage. One of the easiest and most rewarding natives — quick from seed, long-lived, and a magnet for early hummingbirds and native bees. Happy in dry to medium woodland soil and gently self-sows into pleasing drifts.",
-    light: "Part shade",
-    moisture: "Dry to medium",
-    bloomSeason: "April–May",
-    bloomColor: "red & yellow",
-    height: "1–3 ft",
-    price: 10,
-    springPrice: 14,
-    potSize: "Quart",
-    featured: true,
-    highlights: ["Hummingbird favorite", "Self-sows gently", "Deer-resistant"],
-    photoCount: 0,
-  },
   {
     slug: "golden-ragwort",
     botanical: "Packera aurea",
@@ -123,49 +96,29 @@ export const plants: Plant[] = [
     price: 9,
     springPrice: 12,
     potSize: "Quart",
+    featured: true,
     highlights: ["Evergreen groundcover", "Spreads to fill", "Early-season nectar"],
     photoCount: 0,
   },
   {
-    slug: "woodland-phlox",
-    botanical: "Phlox divaricata",
-    common: "Woodland Phlox",
+    slug: "golden-alexanders",
+    botanical: "Zizia aurea",
+    common: "Golden Alexanders",
     group: "shade",
     lifecycle: "perennial",
-    palette: { bloom: ["#9a97ba", "#b8a9c6"], foliage: ["#7f8c66", "#5f6d4c"] },
-    tagline: "Fragrant clouds of lavender-blue.",
+    palette: { bloom: ["#c9a24c"], foliage: ["#7f8c66", "#5f6d4c"] },
+    tagline: "Flat golden umbels for the late-spring edge.",
     description:
-      "Loose clusters of five-petaled, sweetly fragrant flowers float in a haze of lavender-blue over low, spreading foliage. Slow and precious from seed, it settles in to form soft drifts along a shady path. A classic companion to columbine and phlox-loving swallowtails.",
-    light: "Part to full shade",
-    moisture: "Medium",
-    bloomSeason: "April–May",
-    bloomColor: "lavender-blue",
-    height: "10–14 in",
-    price: 12,
-    springPrice: 16,
-    potSize: "Quart",
-    featured: true,
-    highlights: ["Fragrant", "Butterfly nectar", "Forms drifts"],
-    photoCount: 0,
-  },
-  {
-    slug: "american-bellflower",
-    botanical: "Campanula americana",
-    common: "American Bellflower",
-    group: "shade",
-    lifecycle: "biennial",
-    palette: { bloom: ["#8aa2b8"], foliage: ["#828e63", "#5e6b47"] },
-    tagline: "Tall summer spires of five-pointed blue stars.",
-    description:
-      "A graceful woodland-edge biennial: leafy rosettes the first year, then towering stems ringed with flat, star-shaped blue flowers the next summer. Wonderful for a naturalistic planting where it can reseed and drift. Honestly labeled — this one is a patient gardener's plant, blooming in its second year.",
+      "Tidy domes of tiny golden-yellow flowers float over clean, divided foliage from mid-spring into early summer — an easygoing, long-lived woodland-edge native. A key host plant for black swallowtail butterflies, and the foliage stays handsome well past bloom.",
     light: "Part shade",
     moisture: "Medium to moist",
-    bloomSeason: "July–September (year 2)",
-    bloomColor: "sky blue",
-    height: "3–6 ft",
+    bloomSeason: "April–June",
+    bloomColor: "golden yellow",
+    height: "1–3 ft",
     price: 10,
+    springPrice: 13,
     potSize: "Quart",
-    highlights: ["Biennial — blooms year two", "Reseeds", "Bee & butterfly nectar"],
+    highlights: ["Swallowtail host", "Tidy foliage", "Reliable & long-lived"],
     photoCount: 0,
   },
   {
@@ -177,7 +130,7 @@ export const plants: Plant[] = [
     palette: { bloom: ["#b3543f", "#c99f52"], foliage: ["#7c8a66", "#59684a"] },
     tagline: "Scarlet trumpets tipped with a yellow star.",
     description:
-      "The showstopper of the shade garden — upright clusters of crimson tubes flare open into brilliant yellow stars, irresistible to hummingbirds. Slow to size up, so every plant is grown with patience; the reward is a tidy, clump-forming perennial that gets better every year. Our flagship plant.",
+      "The showstopper of the shade garden — upright clusters of crimson tubes flare open into brilliant yellow stars, irresistible to hummingbirds. Slow to size up, so every plant is grown with patience; the reward is a tidy, clump-forming perennial with glossy foliage that gets better every year. Our flagship plant.",
     light: "Part shade",
     moisture: "Medium to moist",
     bloomSeason: "May–June",
@@ -191,23 +144,45 @@ export const plants: Plant[] = [
     photoCount: 0,
   },
   {
-    slug: "poke-milkweed",
-    botanical: "Asclepias exaltata",
-    common: "Poke Milkweed",
+    slug: "eastern-bluestar",
+    botanical: "Amsonia tabernaemontana",
+    common: "Eastern Bluestar",
     group: "shade",
     lifecycle: "perennial",
-    palette: { bloom: ["#d7cbb5", "#c6b0a6"], foliage: ["#7f8b64", "#5c6a49"] },
-    tagline: "The rare milkweed that thrives in shade.",
+    palette: { bloom: ["#9aadc0", "#b4c0cc"], foliage: ["#7e8b63", "#5b6a48"] },
+    tagline: "Powder-blue stars, then golden fall foliage.",
     description:
-      "An uncommon woodland milkweed with drooping umbels of pale green-and-white flowers on tall, poke-like stems. A genuine monarch host plant for shadier gardens where common milkweeds sulk — scarce in the trade and quietly beautiful.",
+      "Clusters of soft, powder-blue star-shaped flowers open in spring above lush, willowy foliage that turns a glowing gold in autumn — a long-lived, trouble-free native with three seasons of interest. An uncommon straight species, adaptable to almost any garden.",
     light: "Part shade",
-    moisture: "Medium",
-    bloomSeason: "June–July",
-    bloomColor: "white & blush",
-    height: "3–6 ft",
+    moisture: "Medium to moist",
+    bloomSeason: "April–May",
+    bloomColor: "powder blue",
+    height: "2–3 ft",
     price: 13,
+    springPrice: 17,
     potSize: "Quart",
-    highlights: ["Monarch host", "Shade-tolerant milkweed", "Uncommon"],
+    featured: true,
+    highlights: ["Golden fall color", "Long-lived", "Uncommon species"],
+    photoCount: 0,
+  },
+  {
+    slug: "mountain-mint",
+    botanical: "Pycnanthemum muticum",
+    common: "Short-toothed Mountain Mint",
+    group: "shade",
+    lifecycle: "perennial",
+    palette: { bloom: ["#cfcebd", "#b9c2ad"], foliage: ["#8a9472", "#5f6d4c"] },
+    tagline: "Months of silvery bracts, alive with pollinators.",
+    description:
+      "One of the very best pollinator plants there is — frosted, silver-green bracts surround tiny flowers for months, drawing clouds of bees and butterflies through summer and fall. Aromatic, deer-proof foliage spreads by runners, so give it room to naturalize.",
+    light: "Part shade",
+    moisture: "Medium to moist",
+    bloomSeason: "July–September",
+    bloomColor: "silvery white",
+    height: "1.5–3 ft",
+    price: 11,
+    potSize: "Quart",
+    highlights: ["Top pollinator plant", "Aromatic & deer-proof", "Spreads to naturalize"],
     photoCount: 0,
   },
 
@@ -231,26 +206,6 @@ export const plants: Plant[] = [
     potSize: "Quart",
     featured: true,
     highlights: ["Hummingbird magnet", "Rain-garden star", "Long bloom"],
-    photoCount: 0,
-  },
-  {
-    slug: "great-blue-lobelia",
-    botanical: "Lobelia siphilitica",
-    common: "Great Blue Lobelia",
-    group: "wet",
-    lifecycle: "perennial",
-    palette: { bloom: ["#6f86a6"], foliage: ["#79865f", "#586646"] },
-    tagline: "Cardinal flower's cool blue counterpart.",
-    description:
-      "Spikes of rich blue, two-lipped flowers carry the wet garden into fall, when little else is blooming. Reliable and long-lived in moist soil, a favorite of bumblebees, and a beautiful partner planted alongside its scarlet cousin.",
-    light: "Part shade",
-    moisture: "Wet",
-    bloomSeason: "August–September",
-    bloomColor: "true blue",
-    height: "2–3 ft",
-    price: 10,
-    potSize: "Quart",
-    highlights: ["Late-season bloom", "Bumblebee favorite", "Rain-garden reliable"],
     photoCount: 0,
   },
   {
@@ -294,68 +249,23 @@ export const plants: Plant[] = [
     photoCount: 0,
   },
   {
-    slug: "cutleaf-coneflower",
-    botanical: "Rudbeckia laciniata",
-    common: "Cutleaf Coneflower",
+    slug: "pink-turtlehead",
+    botanical: "Chelone obliqua",
+    common: "Pink Turtlehead",
     group: "wet",
     lifecycle: "perennial",
-    palette: { bloom: ["#c9a24c"], foliage: ["#849066", "#5f6d4a"] },
-    tagline: "Sunny recurved petals on towering stems.",
+    palette: { bloom: ["#c48b9a", "#d4a6b0"], foliage: ["#77855f", "#56644a"] },
+    tagline: "Rose-pink hooded blooms for the fall water's edge.",
     description:
-      "Bright yellow daisies with gracefully drooping rays and a green central knob wave atop tall, branching stems — cheerful, tough, and fast-growing in moist ground. Feeds late-summer pollinators and sets seed that goldfinches love.",
+      "Curious, hooded rose-pink flowers — each like a little turtle's head — crowd the tops of upright stems from late summer into fall, just when the rain garden needs color most. Clump-forming and uncommon in the trade, and a host plant for the Baltimore checkerspot butterfly.",
     light: "Part shade",
     moisture: "Moist to wet",
-    bloomSeason: "July–September",
-    bloomColor: "golden yellow",
-    height: "4–8 ft",
-    price: 9,
+    bloomSeason: "August–October",
+    bloomColor: "rose pink",
+    height: "2–3 ft",
+    price: 12,
     potSize: "Quart",
-    highlights: ["Fast & tough", "Goldfinch seed", "Late-summer color"],
-    photoCount: 0,
-  },
-
-  // --------------------------- SPECIALTY ---------------------------
-  {
-    slug: "bloodroot",
-    botanical: "Sanguinaria canadensis",
-    common: "Bloodroot",
-    group: "specialty",
-    lifecycle: "perennial",
-    palette: { bloom: ["#e7ded0", "#cfa24f"], foliage: ["#7d8a64", "#5a6948"] },
-    tagline: "A fleeting, pure-white spring ephemeral.",
-    description:
-      "Among the first to greet spring — a single, snow-white flower with a golden center unfurls from a scroll of sculptural, scalloped leaf. Short-lived in bloom but unforgettable, with handsome foliage that carries on afterward. Grown patiently from division; a true collector's woodland treasure.",
-    light: "Part to full shade",
-    moisture: "Medium",
-    bloomSeason: "March–April",
-    bloomColor: "pure white",
-    height: "6–10 in",
-    price: 13,
-    springPrice: 16,
-    potSize: "Quart",
-    featured: true,
-    highlights: ["Early spring ephemeral", "Sculptural foliage", "Collector favorite"],
-    photoCount: 0,
-  },
-  {
-    slug: "wood-poppy",
-    botanical: "Stylophorum diphyllum",
-    common: "Celandine / Wood Poppy",
-    group: "specialty",
-    lifecycle: "perennial",
-    palette: { bloom: ["#cca049"], foliage: ["#8a9568", "#63704b"] },
-    tagline: "Buttery poppies over deeply cut leaves.",
-    description:
-      "Four-petaled, satiny yellow poppies bloom for weeks above lobed, blue-green foliage, then nod into fuzzy seed pods. A cheerful, long-blooming brightener for the shade garden that gently self-sows once it feels at home.",
-    light: "Part to full shade",
-    moisture: "Medium to moist",
-    bloomSeason: "April–June",
-    bloomColor: "golden yellow",
-    height: "12–18 in",
-    price: 11,
-    springPrice: 14,
-    potSize: "Quart",
-    highlights: ["Long bloom", "Self-sows", "Bold foliage"],
+    highlights: ["Late-season bloom", "Baltimore checkerspot host", "Uncommon in trade"],
     photoCount: 0,
   },
 ];
@@ -378,4 +288,4 @@ export function getFeaturedPlants(): Plant[] {
   return getAllPlants().filter((p) => p.featured);
 }
 
-export const groupOrder: PlantGroup[] = ["shade", "wet", "specialty"];
+export const groupOrder: PlantGroup[] = ["shade", "wet"];

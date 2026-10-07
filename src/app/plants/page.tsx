@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Plants",
   description:
-    "The full catalog of native shade, rain-garden, and specialty perennials grown by Knox Plant Guy in Knoxville, Tennessee.",
+    "The full catalog of native shade and rain-garden perennials grown by Knox Plant Guy in Knoxville, Tennessee.",
 };
 
 export default function PlantsPage() {

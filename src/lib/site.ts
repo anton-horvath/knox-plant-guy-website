@@ -8,7 +8,7 @@ export const site = {
   shortName: "Knox Plant Guy",
   tagline: "Shade & rain-garden natives, grown in Knoxville.",
   description:
-    "Small-batch native perennials & biennials for East Tennessee shade gardens and rain gardens. Grown with care by a solo grower in Knoxville.",
+    "Small-batch native perennials for East Tennessee shade gardens and rain gardens. Grown with care by a solo grower in Knoxville.",
   location: "Knoxville, Tennessee · USDA Zone 7b",
 
   // --- Contact + social (edit these) ---
