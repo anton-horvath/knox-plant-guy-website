@@ -47,8 +47,8 @@ export default function HomePage() {
           {/* Hero outline arrangement */}
           <div className="relative mx-auto flex h-72 w-full max-w-sm items-end justify-center gap-2 sm:h-96">
             <PlantArt slug="cardinal-flower" className="h-[85%] w-auto" />
-            <PlantArt slug="wild-columbine" className="h-[70%] w-auto" />
-            <PlantArt slug="bloodroot" className="h-[55%] w-auto" />
+            <PlantArt slug="indian-pink" className="h-[70%] w-auto" />
+            <PlantArt slug="eastern-bluestar" className="h-[55%] w-auto" />
           </div>
         </Container>
         <div className="mx-auto h-px w-full max-w-6xl bg-mist/70" />
@@ -58,13 +58,13 @@ export default function HomePage() {
       <section className="py-16 sm:py-20">
         <Container>
           <div className="max-w-2xl">
-            <p className="eyebrow">Three habitats</p>
+            <p className="eyebrow">Two habitats</p>
             <h2 className="mt-4 font-display text-3xl font-light text-ink sm:text-4xl">
               Grown for the places most gardens forget.
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
             {groupOrder.map((g) => {
               const meta = groupMeta[g];
               const sample = getPlantsByGroup(g)[0];

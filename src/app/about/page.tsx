@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    slug: "bloodroot",
+    slug: "eastern-bluestar",
     title: "Grown from scratch",
-    body: "Every plant starts here — from seed cold-stratified over winter or careful division of stock plants. Nothing is bought in and flipped.",
+    body: "Every plant starts here — seed cold-stratified through winter, then sown and grown on by hand. Nothing is bought in and flipped.",
   },
   {
     slug: "swamp-milkweed",
@@ -21,9 +21,9 @@ const values = [
     body: "These are the plants that belong in East Tennessee: hosts for monarchs, nectar for native bees, and food for the birds that overwinter here.",
   },
   {
-    slug: "wood-poppy",
+    slug: "mountain-mint",
     title: "Small batch, honest labels",
-    body: "Biennials are sold as biennials; slow growers are grown slowly. You get a healthy, honestly-described plant — not a forced one-season showpiece.",
+    body: "Slow growers are grown slowly; spreaders are labeled as spreaders. You get a healthy, honestly-described plant — not a forced one-season showpiece.",
   },
 ];
 
